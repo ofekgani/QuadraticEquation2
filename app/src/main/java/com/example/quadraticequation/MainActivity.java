@@ -1,5 +1,6 @@
 package com.example.quadraticequation;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     public Button btn_next, btn_random;
     public EditText ed_a, ed_b, ed_c;
-    double a, b, c;
+    int a, b, c;
     String st_a, st_b, st_c;
 
     @Override
@@ -42,12 +43,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void next(View view) {
         st_a = ed_a.getText().toString();
-        a = Double.parseDouble(st_a);
+            a = Integer.parseInt(st_a);
 
         st_b = ed_b.getText().toString();
-        b = Double.parseDouble(st_b);
+        b = Integer.parseInt(st_b);
 
         st_c = ed_c.getText().toString();
-        c = Double.parseDouble(st_c);
+        c = Integer.parseInt(st_c);
+
+        Intent si = new Intent(this,ActivitySolution.class);
+        si.putExtra("n",a);
+        si.putExtra("nn",b);
+        si.putExtra("nnn",c);
+        startActivity(si);
     }
 }

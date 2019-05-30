@@ -37,8 +37,7 @@
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="number"
-            android:onClick="input_a"/>
+            android:inputType="number" />
     </LinearLayout>
 
     <LinearLayout
